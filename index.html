@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KopKaff' — Good coffee doesn't have to cost more</title>
+<link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+<header class="site-nav">
+    <div class="logo-mark"><img src="logo.png" alt="KopKaff' Logo"></div>
+    <nav class="links">
+      <a href="#home" class="active">HOME</a>
+      <a href="menu.html">MENU</a>
+      <a href="about.html">ABOUT</a>
+    </nav>
+  <div class="nav-right">
+    <span class="lang">DA</span>
+    <span class="lang active">EN</span>
+  </div>
+</header>
+
+<section class="hero-banner" id="home">
+  <h1>KopKaff'</h1>
+  <p class="hero-tagline">Good coffee doesn't<br>
+    have to cost more…</p>
+</section>
+
+<div class="hero-photo">
+  <img src="coffee.png" alt="Coffee and sandwiches at KopKaff'">
+</div>
+
+<section class="about" id="about">
+  <div class="stain" style="width:70px;height:70px; left:-460px; top:60px;"></div>
+  <div class="stain" style="width:40px;height:40px; left:-420px; top:130px;"></div>
+  <p>KopKaff' started with a simple idea: good coffee doesn't have to be complicated or expensive.</p>
+  <p>We're a family-run café with a love for good coffee, freshly baked treats and bringing people together. Whether you're stopping by for your morning cappuccino, grabbing a BMO with a friend, or settling in for a while, we want KopKaff' to feel like a place you can call your own.</p>
+  <p>We keep things simple. One good coffee bean, fair prices and a small, cosy atmosphere where everyone is welcome. And we're not just about coffee — you can also enjoy a beer or a glass of wine when the mood calls for it.</p>
+  <p>So come in, grab a cup, stay a little ☕</p>
+</section>
+
+<section class="gallery">
+  <div class="stain" style="width:100px;height:100px; right:60px; top:10px;"></div>
+  <div class="stain" style="width:60px;height:60px; right:0px; top:130px;"></div>
+  <figure class="mono"><img src="barista.png"></figure>
+  <figure class="color"><img src="table.png"></figure>
+</section>
+
+<section class="accordion-wrap" id="menu">
+  <div class="accordion-item" data-acc>
+    <button class="acc-trigger">
+      <span>Opening Hours</span>
+      <span class="arrow">▾</span>
+    </button>
+    <div class="accordion-panel">
+      <div class="inner">
+        Monday: 7:30 – 16:30<br>
+        Tuesday: 7:30 – 16:30<br>
+        Wednesday: 7:30 – 16:30<br>
+        Thursday: 7:30 – 16:30<br>
+        Friday: 7:30 – 18:00<br>
+        Saturday: 8:45 – 18:00<br>
+        Sunday: 8:45 – 16:30
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item" data-acc>
+    <button class="acc-trigger">
+      <span>Location</span>
+      <span class="arrow">▾</span>
+    </button>
+    <div class="accordion-panel">
+      <div class="inner">
+        Latinerkvarteret Badstuegade 12, 8000 Aarhus, Denmark
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item" data-acc>
+    <button class="acc-trigger">
+      <span>Events</span>
+      <span class="arrow">▾</span>
+    </button>
+    <div class="accordion-panel">
+      <div class="inner">
+        Run Club: Every Wednesday at 16:30 - in collaboration with oversized lifting club
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="loyalty-section">
+  <div class="kaff-card">
+    <span class="num">1</span><span class="num">2</span><span class="num">3</span><span class="num">4</span><span class="num">5</span>
+    <div class="brand-row">
+      <div class="stamp"><img src="logo.png" alt="KopKaff' Logo"></div>
+      <h2>Kaff'Kort</h2>
+      <div class="stamp"><img src="logo.png" alt="KopKaff' Logo"></div>
+    </div>
+    <span class="num">6</span><span class="num">7</span><span class="num">8</span><span class="num">9</span><span class="num">10</span>
+  </div>
+  <div class="loyalty-copy">
+    <p>For 250dkk you can get<br>10 coffees of your choice!</p>
+    <button class="buy-btn">BUY NOW!</button>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-logo"><img src="logo.png" alt="KopKaff' Logo"></div>
+  <div class="col">
+    <h3>Contacts</h3>
+    <p>Phone number: 93 93 68 91</p>
+    <p>E-mail: mail@kopkaff.dk</p>
+  </div>
+  <div class="col">
+    <h3>Location</h3>
+    <a href="#">Get Directions →</a>
+  </div>
+  <div class="col">
+    <h3>Return to:</h3>
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="about.html">About us</a>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('[data-acc]').forEach(item=>{
+    const trigger = item.querySelector('.acc-trigger');
+    const panel = item.querySelector('.accordion-panel');
+    trigger.addEventListener('click', ()=>{
+      const isOpen = item.classList.contains('open');
+      // close all
+      document.querySelectorAll('[data-acc]').forEach(i=>{
+        i.classList.remove('open');
+        i.querySelector('.accordion-panel').style.maxHeight = null;
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
